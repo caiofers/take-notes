@@ -51,7 +51,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="att-mB-Ugj">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="gC0-ND-D4k" kind="show" id="jLa-KQ-6qj"/>
+                                <segue destination="gC0-ND-D4k" kind="show" identifier="seeNote" id="jLa-KQ-6qj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

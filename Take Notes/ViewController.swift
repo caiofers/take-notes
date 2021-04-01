@@ -63,6 +63,20 @@ class ViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        let note = listOfNotes[indexPath.row]
+        
+        performSegue(withIdentifier: "seeNote", sender: note)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "seeNote" {
+            let destinyView = segue.destination as! TextViewController
+            destinyView.note = sender as? NSManagedObject
+        }
+    }
+    
 }
 
