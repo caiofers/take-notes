@@ -6,24 +6,37 @@
 //
 
 import UIKit
+import CoreData
 
 class TextViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    var context: NSManagedObjectContext!
+    
+    @IBAction func saveText(_ sender: Any) {
+        saveNote()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func saveNote() {
+        let newNote = NSEntityDescription.insertNewObject(forEntityName: "Notes", into: context)
+        
+        newNote.setValue(textView.text, forKey: "text")
+        newNote.setValue(Date(), forKey: "date")
+        
+        do {
+            try context.save()
+        } catch let error as Error {
+            print("Error: \(error.localizedDescription)")
+        }
     }
-    */
 
 }

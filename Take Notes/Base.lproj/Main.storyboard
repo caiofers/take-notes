@@ -76,8 +76,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="UEs-Nn-MJH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Xu-ia-wHR"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Xu-ia-wHR">
+                            <connections>
+                                <action selector="saveText:" destination="gC0-ND-D4k" id="2cK-uY-D8H"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="N4m-4N-qDw" id="G3D-Jm-qrC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoW-mU-ZGA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
