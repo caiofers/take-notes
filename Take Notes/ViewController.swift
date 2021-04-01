@@ -24,6 +24,10 @@ class ViewController: UITableViewController {
     func getNotes() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
         
+        let orderByData = NSSortDescriptor(key: "date", ascending: false)
+        
+        request.sortDescriptors = [orderByData]
+        
         do {
             let notesResult = try context.fetch(request)
             listOfNotes = notesResult as! [NSManagedObject]
