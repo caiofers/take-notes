@@ -14,6 +14,7 @@
 		DF8C264326154DE800B3E181 /* Take_Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF8C264126154DE800B3E181 /* Take_Notes.xcdatamodeld */; };
 		DF8C264526154DEA00B3E181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF8C264426154DEA00B3E181 /* Assets.xcassets */; };
 		DF8C264826154DEA00B3E181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8C264626154DEA00B3E181 /* LaunchScreen.storyboard */; };
+		DF8C2651261552C400B3E181 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C2650261552C400B3E181 /* TextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DF8C264426154DEA00B3E181 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF8C264726154DEA00B3E181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF8C264926154DEA00B3E181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF8C2650261552C400B3E181 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				DF8C264626154DEA00B3E181 /* LaunchScreen.storyboard */,
 				DF8C264926154DEA00B3E181 /* Info.plist */,
 				DF8C264126154DE800B3E181 /* Take_Notes.xcdatamodeld */,
+				DF8C2650261552C400B3E181 /* TextViewController.swift */,
 			);
 			path = "Take Notes";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF8C2651261552C400B3E181 /* TextViewController.swift in Sources */,
 				DF8C264326154DE800B3E181 /* Take_Notes.xcdatamodeld in Sources */,
 				DF8C263D26154DE800B3E181 /* ViewController.swift in Sources */,
 				DF8C263926154DE800B3E181 /* AppDelegate.swift in Sources */,

@@ -11,13 +11,13 @@
         <!--Take Notes-->
         <scene sceneID="L2D-nE-vmE">
             <objects>
-                <tableViewController id="BMl-9f-P0c" sceneMemberID="viewController">
+                <tableViewController id="BMl-9f-P0c" customClass="ViewController" customModule="Take_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DYk-Bu-zC1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6GS-yj-MGI">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseNoteCell" id="6GS-yj-MGI">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6GS-yj-MGI" id="FOn-zl-ou3">
@@ -47,7 +47,7 @@
         <!--Add-->
         <scene sceneID="eAs-gV-bsk">
             <objects>
-                <viewController id="gC0-ND-D4k" sceneMemberID="viewController">
+                <viewController id="gC0-ND-D4k" customClass="TextViewController" customModule="Take_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nqT-Pm-ow7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
