@@ -15,11 +15,18 @@ class TextViewController: UIViewController {
     
     @IBAction func saveText(_ sender: Any) {
         saveNote()
+        
+        // Retorna para tela anterior
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Init Setup
+        textView.becomeFirstResponder()
+        textView.text = ""
 
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
@@ -34,6 +41,7 @@ class TextViewController: UIViewController {
         
         do {
             try context.save()
+            print("Saved!")
         } catch let error as Error {
             print("Error: \(error.localizedDescription)")
         }
