@@ -56,7 +56,7 @@ class TextViewController: UIViewController {
         do {
             try context.save()
             print("Saved!")
-        } catch let error as Error {
+        } catch let error {
             print("Error: \(error.localizedDescription)")
         }
     }
@@ -68,7 +68,7 @@ class TextViewController: UIViewController {
         do {
             try context.save()
             print("Saved!")
-        } catch let error as Error {
+        } catch let error {
             print("Error: \(error.localizedDescription)")
         }
     }

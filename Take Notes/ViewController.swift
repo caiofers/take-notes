@@ -23,10 +23,11 @@ class ViewController: UITableViewController {
     
     func getNotes() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+        
         do {
             let notesResult = try context.fetch(request)
             listOfNotes = notesResult as! [NSManagedObject]
-        } catch let error as Error {
+        } catch let error {
             print("Error: \(error.localizedDescription)")
         }
         
@@ -75,6 +76,24 @@ class ViewController: UITableViewController {
         if segue.identifier == "seeNote" {
             let destinyView = segue.destination as! TextViewController
             destinyView.note = sender as? NSManagedObject
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let note = listOfNotes[indexPath.row]
+            
+            context.delete(note)
+            listOfNotes.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            do {
+                try context.save()
+                print("Deleted!")
+            } catch let error {
+                print("Error: \(error.localizedDescription)")
+            }
         }
     }
     
