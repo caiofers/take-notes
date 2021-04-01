@@ -51,7 +51,14 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseCell, for: indexPath)
     
         let note = listOfNotes[indexPath.row]
-        cell.textLabel?.text = note.value(forKey: "text") as! String
+        let text = note.value(forKey: "text")
+        let date = note.value(forKey: "date")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy - hh:mm"
+        
+        cell.textLabel?.text = text as? String
+        cell.detailTextLabel?.text = dateFormatter.string(from: date as! Date)
         
         return cell
     }
