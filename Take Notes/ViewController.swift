@@ -6,16 +6,37 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UITableViewController {
 
-    var listOfNotes: [String] = []
+    var listOfNotes: [NSManagedObject] = []
+    var context: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
     }
 
+    
+    func getNotes() {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+        do {
+            let notesResult = try context.fetch(request)
+            listOfNotes = notesResult as! [NSManagedObject]
+        } catch let error as Error {
+            print("Error: \(error.localizedDescription)")
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getNotes()
+        tableView.reloadData()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -29,7 +50,8 @@ class ViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseCell, for: indexPath)
     
-        cell.textLabel?.text = listOfNotes[indexPath.row]
+        let note = listOfNotes[indexPath.row]
+        cell.textLabel?.text = note.value(forKey: "text") as! String
         
         return cell
     }
